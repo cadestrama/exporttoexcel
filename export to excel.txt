@@ -1,0 +1,48 @@
+1. composer require maatwebsite/excel
+- composer require maatwebiste/excel --with-all-dependencies
+
+2. app-providers
+\Maatwebsite\Excel\ExcelServiceProvider::class,
+
+
+3. aliases
+
+'Excel' => \Maatwebsite/Excel\Facades\Excel::class,
+
+4.php artisan vendor:publish --provider="Maatwebsite\Excel\Excel\ServiceProvider"
+
+5. php artisan serve
+
+Model Employee
+
+protected $table = 'employees';
+
+
+6. php artisan make:export EmployeeExport --model=App\Models\Employee
+
+7. export class
+
+public function headings() : array{
+
+return [
+  'id',
+ 'name'	
+];
+
+public function collection(){
+
+return collect(Employee::getEmployee());
+
+
+8. employeeExport
+use Maatwebsite\Excel\Concerns\WithHeadings;
+
+add to class interface -> withHeadings
+
+9. EmployeeController 
+- add use App\Exports\EmployeeExport;
+- add Excel;
+
+- function export(){
+
+return Excel::download(new EmployeeExport,'employeelist.xlsx');
