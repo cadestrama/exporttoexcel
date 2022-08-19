@@ -1,0 +1,17 @@
+1. sql export
+2. php artisan config:cache
+3. php artisan cache:clear
+4. php artisan view:clear
+
+5. create subdomain
+6. upload to domain folder
+7. edit the env
+8. boostrap folder- cache- delete config.php
+9. root- create .htaccess
+
+<IfModule mod_rewrite.c>
+   RewriteEngine on     
+   RewriteCond %{REQUEST_URI} !^public
+   RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
