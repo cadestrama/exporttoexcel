@@ -6,6 +6,7 @@
 5. create subdomain
 6. upload to domain folder
 7. edit the env
+8. update php version 
 8. boostrap folder- cache- delete config.php
 9. root- create .htaccess
 
