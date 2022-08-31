@@ -21,3 +21,12 @@
 elink.rmdivi.com ttl=600 class=IN type=A record=server ip address
 
 
+//user login route to dashboard add this method
+
+logincontroller
+
+    protected function authenticated(Request $request, $user)
+    {
+
+            return redirect()->route('websitedashboard');
+    }
