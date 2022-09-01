@@ -30,3 +30,13 @@ logincontroller
 
             return redirect()->route('websitedashboard');
     }
+    
+ 
+ // inside ajax redirection
+          setInterval(function() {
+          window.location = '{{route('websiteuser')}}';
+          }, 2000);
+                                
+ //reload
+ 
+       window.location.reload();
