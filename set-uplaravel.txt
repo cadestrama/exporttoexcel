@@ -40,3 +40,9 @@ logincontroller
  //reload
  
        window.location.reload();
+       
+ //root redirect to public or rm in laravel host
+ 1. create index.php inside the root folder
+       
+ <?php
+header('Location: rm/');
