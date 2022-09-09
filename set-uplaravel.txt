@@ -46,3 +46,10 @@ logincontroller
        
  <?php
 header('Location: rm/');
+
+
+///user log-out
+public function userLogout(){
+
+        return redirect('login')->with(Auth::logout());
+    }
