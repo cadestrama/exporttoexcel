@@ -53,3 +53,38 @@ public function userLogout(){
 
         return redirect('login')->with(Auth::logout());
     }
+    
+    //search filter in livewire
+    query:
+
+public $paginate =10;
+public $checked =[];
+public $search="";
+public $selectedClass = null;
+
+method render:
+
+return view('livewire.students',['students'=>
+
+	Student::with(['class','section'])
+	->when($this->selectedClass,function($query)){
+		$query->where('class_id',$this->selectedClass);
+	}->search(trim($this->search))
+	->paginate($this->paginate),
+	'classes'=>Classes::all(),
+]);
+
+
+						
+//model 
+
+public function scopeSearch($query,$term){
+$term = "%$term%";
+$query->where(function($query) use ($term){
+	$query->where('name', 'like', $term)
+	->orWhere('email','like',$term)
+	->orWhereHas('class', function($query) use($term){
+		$query->where('name','like',$term);
+	})
+});
+}
