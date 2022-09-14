@@ -88,3 +88,24 @@ $query->where(function($query) use ($term){
 	})
 });
 }
+
+
+//Emit Events in livewire
+// must be in livewire template
+<div @click="isMenu = 'listevent'"  wire:click="$emit('listevent')" :class="{'py-2 rounded-lg bg-red-900 font-bold text-gray-100 ':isMenu==='listevent'}"></div>
+//listened the event in any component
+protected $listeners = ['listevent' => 'showListEvent'];
+
+public function showListEvent(){
+        $this->render();
+    }
+    
+ public function render()
+    {
+        return view('livewire.listevents',[
+            'events' => Event::listEvent()
+        ]);
+    }
+}
+
+
