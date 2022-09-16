@@ -109,3 +109,8 @@ public function showListEvent(){
 }
 
 
+//sweetalert2 livewire
+go to this link for the instructions:
+https://github.com/jantinnerezo/livewire-alert
+
+
