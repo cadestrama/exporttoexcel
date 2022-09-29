@@ -114,3 +114,19 @@ go to this link for the instructions:
 https://github.com/jantinnerezo/livewire-alert
 
 
+//download pdf in laravel
+
+public function download(){
+
+        $event = Event::getEventSpecific($this->eventid);
+
+        $trimBrochureAddress = explode('/',$event->eventbrochure);
+
+        $path = public_path('storage/event_brochure/'.$trimBrochureAddress[1]);
+
+        return response()->download($path);
+
+
+    }
+
+
