@@ -129,4 +129,5 @@ public function download(){
 
     }
 
-
+//paginate shorten
+User::paginate(10)->onEachSide(2);
