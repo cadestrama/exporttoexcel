@@ -131,3 +131,12 @@ public function download(){
 
 //paginate shorten
 User::paginate(10)->onEachSide(2);
+
+
+//online catalog
+WHM ACCESS
+https://66.45.248.2:2087/ 
+Username: devsite
+Password: Dp=Tufvd!MF6/*!J
+
+onlinecatalog.readersmagnet.com
